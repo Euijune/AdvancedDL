@@ -8,5 +8,12 @@
   https://erasing.baulab.info/weights/esd_models/
 
   esd_models/art: 특정 style지우기
-  esd_models/NSFW: Nudity 제거
+
+  esd_models/NSFW: Nudity 제거 
+
+  fine-tuned weight를 다운받으면 models아래 하위 폴더를 만들고, 해당 폴더안에 pt파일을 저장
+  
+    EX) diffusers-VanGogh-ESDx1-UNET.pt파일을 다운받았다면, models/compvis-VanGogh-ESDx1-UNET 폴더를 만들고 그 안에 pt파일 위치
+
+
 
