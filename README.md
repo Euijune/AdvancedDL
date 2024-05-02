@@ -1,3 +1,5 @@
+python eval-scripts/generate-images.py --model_name='models/compvis-VanGogh-ESDx1-UNET' --prompts_path 'data_from_ESD/0421_reproduce.csv' --save_path 'evaluation_folder' --num_samples 10
+
 # Stable Diffusion
 *Stable Diffusion was made possible thanks to a collaboration with [Stability AI](https://stability.ai/) and [Runway](https://runwayml.com/) and builds upon our previous work:*
 
