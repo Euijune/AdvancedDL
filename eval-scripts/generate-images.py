@@ -6,6 +6,10 @@ from PIL import Image
 import pandas as pd
 import argparse
 import os
+
+## 시작전에 path를 자기 환경에 맞게 설정해주세요
+path = "/mnt/shared/development/dgl/hyungjoon/AdvancedDL/models"
+
 def generate_images(model_name, prompts_path, save_path, device='cuda:0', guidance_scale = 7.5, image_size=512, ddim_steps=100, num_samples=10, from_case=0):
     '''
     Function to generate images from diffusers code
@@ -60,12 +64,12 @@ def generate_images(model_name, prompts_path, save_path, device='cuda:0', guidan
     print("Load tokenizer & text encoder")
 
     # 3. The UNet model for generating the latents.
+    
     unet = UNet2DConditionModel.from_pretrained(dir_, subfolder="unet")
     print("Load UNet")
-
-    if 'SD' not in model_name:
+    if 'ESD' in model_name:
         try:
-            model_path = f'models/{model_name}/{model_name.replace("compvis","diffusers")}.pt'
+            model_path = path +  "/" +  model_name + ".pt"
             unet.load_state_dict(torch.load(model_path))
             print(f'Load UNet weights from {model_path}')
         except Exception as e:
